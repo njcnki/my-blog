@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import Navigation from '../../components/Navigation.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map(post => ({
@@ -22,6 +23,7 @@ const { Content } = await render(post);
     </style>
   </head>
   <body>
+    <Navigation />
     <h1>{post.data.title}</h1>
     <article>
       <Content />
