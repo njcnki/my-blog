@@ -8,6 +8,7 @@ const posts = defineCollection({
     pubDate: z.string(),
     description: z.string(),
     author: z.string(),
+    tags: z.array(z.string()).optional(), // 新增标签支持
   }),
 });
 
