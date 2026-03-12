@@ -9,7 +9,7 @@ const allPosts = await getCollection('posts');
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<title>我的博客</title>
+		<title>说不得</title>
 		<style>
 			body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; padding: 2rem; }
 			h1 { color: #000; }
@@ -23,8 +23,8 @@ const allPosts = await getCollection('posts');
 	</head>
 	<body>
 		<Navigation />
-		<h1>我的个人博客</h1>
-		<p>欢迎来到我的空间。</p>
+		<h1>说不得</h1>
+		<p>这里是“说不得”的数字空间。</p>
 		
 		<ul>
 			{allPosts.map((post) => (
