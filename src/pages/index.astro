@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Navigation from '../components/Navigation.astro';
 const allPosts = await getCollection('posts');
+allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 ---
 
 <html lang="zh-CN">
