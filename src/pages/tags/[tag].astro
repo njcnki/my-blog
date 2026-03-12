@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags || []).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tags?.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>标签: {tag}</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; padding: 2rem; }
+        a { color: #0070f3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { padding: 0; }
+        li { list-style: none; margin-bottom: 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <h1>标签: {tag}</h1>
+    <a href="/my-blog/">← 返回首页</a>
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <a href={`/my-blog/posts/${post.id}/`}>{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
