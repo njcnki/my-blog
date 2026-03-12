@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: '第一篇随笔：在数字世界里种下第一颗豆子'
-pubDate: 2026-03-12
+pubDate: '2026-03-12'
 description: '欢迎来到我的数字花园。'
 author: '豆子'
 ---
