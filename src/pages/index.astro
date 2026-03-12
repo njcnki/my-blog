@@ -27,7 +27,7 @@ const allPosts = await getCollection('posts');
 		<ul>
 			{allPosts.map((post) => (
 				<li>
-					<a href={`/posts/${post.id}/`}>{post.data.title}</a>
+					<a href={`posts/${post.id}/`}>{post.data.title}</a>
 					<span class="meta">{post.data.pubDate}</span>
 					{post.data.tags?.map((tag) => <span class="tag">{tag}</span>)}
 				</li>
