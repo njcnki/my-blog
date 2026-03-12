@@ -17,23 +17,35 @@ const { Content } = await render(post);
     <title>{post.data.title}</title>
     <style is:global>
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; padding: 1.5rem; width: 100%; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.8; color: #333; max-width: 700px; margin: 0 auto; padding: 1.5rem; width: 100%; }
         @media (max-width: 600px) {
-            body { padding: 1rem; }
+            body { padding: 1.5rem 1rem; }
         }
-        h1 { margin-bottom: 1rem; font-size: 1.8rem; }
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: #0070f3; width: 0%; z-index: 1000; transition: width 0.1s ease; }
+        h1 { margin-bottom: 1rem; font-size: 2rem; line-height: 1.2; }
         article { border-top: 1px solid #eee; padding-top: 2rem; margin-top: 2rem; }
-        article img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 1.5rem 0; }
-        article iframe { max-width: 100%; border-radius: 8px; display: block; margin: 1.5rem 0; }
-        a { color: #0070f3; }
+        article img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem 0; }
+        article iframe { max-width: 100%; border-radius: 8px; display: block; margin: 2rem 0; }
+        article p { margin-bottom: 1.5rem; }
+        a { color: #0070f3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
+    <div id="progress-bar"></div>
     <Navigation />
     <h1>{post.data.title}</h1>
     <article>
       <Content />
     </article>
     <br><a href="/my-blog/">← 返回首页</a>
+    <script>
+      window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      };
+    </script>
   </body>
 </html>
