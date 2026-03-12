@@ -9,14 +9,21 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
-<html>
+<html lang="zh-CN">
   <head>
-    <title>{post.data.title}</title>
+    <title>{post.data.title} | 系统观察</title>
+    <style>
+        body { background: #000; color: #ccc; font-family: 'Courier New', Courier, monospace; padding: 2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        h1 { color: #33ff33; border-left: 4px solid #33ff33; padding-left: 1rem; margin-bottom: 2rem; }
+        article { border-top: 1px solid #333; padding-top: 1rem; }
+        a { color: #33ff33; }
+    </style>
   </head>
   <body>
     <h1>{post.data.title}</h1>
     <article>
       <Content />
     </article>
+    <br><a href="/">[返回主界面]</a>
   </body>
 </html>

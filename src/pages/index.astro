@@ -8,17 +8,25 @@ const allPosts = await getCollection('posts');
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<title>豆子的数字花园</title>
+		<title>说不得·系统观察</title>
+		<style>
+			body { background: #000; color: #33ff33; font-family: 'Courier New', Courier, monospace; padding: 2rem; line-height: 1.6; }
+			h1 { border-bottom: 1px solid #33ff33; padding-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+			a { color: #fff; text-decoration: none; }
+			a:hover { color: #33ff33; text-decoration: underline; }
+			li { margin-bottom: 1rem; list-style-type: '>'; }
+			.meta { color: #555; font-size: 0.9rem; }
+		</style>
 	</head>
 	<body>
-		<h1>豆子的数字花园 🌱</h1>
-		<p>欢迎来到我的个人博客。</p>
+		<h1>[SYSTEM_LOG] 豆子的观察台</h1>
+		<p>观测样本记录：</p>
 		
-		<h2>文章列表</h2>
 		<ul>
 			{allPosts.map((post) => (
 				<li>
-					<a href={`/posts/${post.id}/`}>{post.data.title}</a> - {post.data.pubDate}
+					<a href={`/posts/${post.id}/`}>{post.data.title}</a>
+					<br /><span class="meta">DATE: {post.data.pubDate}</span>
 				</li>
 			))}
 		</ul>
