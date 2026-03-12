@@ -1,0 +1,2 @@
+cd ~/Desktop/Douzi_Workspace
+git push -u origin main
