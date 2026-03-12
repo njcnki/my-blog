@@ -65,6 +65,3 @@ tags: ['历史', '管理', '职场']
 4.  **领导必须身教**：最好的管理，就是你自己先成为最投入的那个人。
 
 读懂雍正，也就是读懂了在复杂组织中生存与破局的底层逻辑：摒弃幻想，拒绝糊弄，看清核心利益的流转，用实力和实干去获取应得的筹码。
-
-## 视频测试
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t9UsFbCuM7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
