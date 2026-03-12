@@ -1,5 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://njcnki.github.io', // 假设你的 GitHub 用户名是 njcnki
+  base: '/',
+});
