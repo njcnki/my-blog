@@ -1,2 +1,14 @@
 cd ~/Desktop/Douzi_Workspace
 git push -u origin main
+
+1. 安装（如果没有的话）：终端运行 brew install gh (如果没装 Homebrew，可以去 cli.github.com 下载安装)。
+2. 登录：在终端输入 gh auth login，选 GitHub.com，选 HTTPS，然后选 Login with a web browser。它会给你一个验证码，你在浏览器粘贴一下就搞定了。
+3. 推送：登录成功后，再次运行 git push -u origin main，这回就直接顺滑推送成功了！
+
+搞定这个后，以后你只需要敲 git push 就能秒更新，再也不用管密码的事儿啦。要试
+
+ting713713713713
+
+ssh-keygen -t ed25519 -C "kanech1329@gmail.com"
+
+
