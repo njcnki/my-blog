@@ -10,32 +10,59 @@ allPosts.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pub
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>说不得</title>
+		<title>说不得 | 洞察与深度</title>
 		<style>
-			body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.8; color: #333; max-width: 700px; margin: 0 auto; padding: 1.5rem; width: 100%; font-size: 1.125rem; }
-			@media (max-width: 600px) {
-				body { padding: 1.5rem 1rem; font-size: 1.1rem; }
+			:root {
+				--accent: #2d3436;
+				--bg: #ffffff;
+				--text: #2d3436;
+				--subtext: #636e72;
 			}
-			h1 { color: #000; font-size: 2.2rem; margin-bottom: 2rem; }
-			a { color: #0070f3; text-decoration: none; }
-			a:hover { text-decoration: underline; }
+			body { 
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+				line-height: 1.6; 
+				color: var(--text); 
+				max-width: 700px; 
+				margin: 0 auto; 
+				padding: 3rem 1.5rem; 
+				background: var(--bg);
+			}
+			h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+			.intro { color: var(--subtext); margin-bottom: 3rem; }
+			
 			ul { padding: 0; }
-			li { list-style: none; margin-bottom: 2rem; }
-			.meta { color: #666; display: block; font-size: 0.9rem; margin-top: 0.25rem; }
-			.tag { font-size: 0.8rem; background: #f0f0f0; padding: 2px 8px; border-radius: 4px; margin-right: 8px; color: #555; }
+			li { list-style: none; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem; }
+			
+			.post-title { font-size: 1.5rem; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+			a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+			a:hover { opacity: 0.7; }
+			
+			.meta { color: var(--subtext); font-size: 0.9rem; margin-right: 1rem; }
+			.tag { 
+				font-size: 0.75rem; 
+				background: #f1f2f6; 
+				padding: 2px 8px; 
+				border-radius: 4px; 
+				color: #57606f; 
+				font-weight: 500;
+			}
 		</style>
 	</head>
 	<body>
 		<Navigation />
-		<h1>说不得</h1>
-		<p>这里是“说不得”的数字空间。</p>
+		<header>
+			<h1>说不得</h1>
+			<p class="intro">观察、拆解、重构。这里是深度的避风港。</p>
+		</header>
 		
 		<ul>
 			{allPosts.map((post) => (
 				<li>
-					<a href={`/my-blog/posts/${post.id}/`}>{post.data.title}</a>
-					<span class="meta">{post.data.pubDate}</span>
-					{post.data.tags?.map((tag) => <a href={`/my-blog/tags/${tag}/`} class="tag">{tag}</a>)}
+					<a href={`/my-blog/posts/${post.id}/`} class="post-title">{post.data.title}</a>
+					<div>
+						<span class="meta">{post.data.pubDate}</span>
+						{post.data.tags?.map((tag) => <a href={`/my-blog/tags/${tag}/`} class="tag">{tag}</a>)}
+					</div>
 				</li>
 			))}
 		</ul>
