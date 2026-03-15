@@ -1,0 +1,23 @@
+1、Agent Browser
+让 AI Agent 拥有人类级的浏览器操作能力，解决了传统 AI 仅能通过 API 获取静态数据、无法直接操控浏览器的核心痛点，安装命令：编程
+npx clawhub@latest install agent-browser
+
+2、Tavily Web Search
+OpenClaw 的 “实时信息大脑”，联网搜索技能，让Agent能实时查最新资讯、数据，避免“闭眼编”，解决 Agent “信息滞后” 痛点，几乎所有人都说“没这个跟瞎子一样”。安装命令：
+npx clawhub@latest install tavily-search
+
+
+4、weather
+OpenClaw 生态中排名前十的高频刚需技能，主打免 API 密钥、开箱即用、多格式输出，专为 AI Agent 设计，能快速响应自然语言的天气查询需求，适配自动化办公、出行规划等各类场景。
+npx clawhub@latest install weather
+ 
+
+6、summarize
+内容总结，快速消化，信息降噪神器，快速提炼核心价值，支持格式有：网页、文档（Word/PDF）、邮件、长文本、视频字幕（需搭配 OCR 技能）；
+npx clawhub@latest install summarize
+
+
+Find Skills —— 用 Skill 找 Skill
+https://skills.sh/vercel-labs/skills/find-skills
+npx skills add vercel-labs/skills/find-skills
+
